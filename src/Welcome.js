@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Welcome extends React.Component {s
+export class Welcome extends React.Component {
   render() {
     if (this.props.name === 'Oksana' || this.props.signedIn === true) {
       return (

@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { NavBar } from './NavBar.js';
 import { SignInButton } from './signInButton';
+import { Widget } from 'react-chat-widget';
+import 'react-chat-widget/lib/styles.css';
 
 import img from './images/background-plant.png';
 import logo from './images/logo.png'
 
 export class ProfilePage extends React.Component {
-
+     handleNewUserMessage = (newMessage) => {
+        console.log(`New message incomig! ${newMessage}`);
+        // Now send the message throught the backend API
+  }
 
     render(){
 
@@ -40,6 +45,9 @@ export class ProfilePage extends React.Component {
 
                     {/*<img className="background-img" src={ img } />*/}
                 </content>
+                  <Widget
+                    handleNewUserMessage={this.handleNewUserMessage}
+                  />
             </div>
         );
     }
